@@ -1,0 +1,37 @@
+{
+  // This config is what your EDITOR uses. It covers every folder, so you get
+  // red squiggles and autocomplete in exercise.ts and solution.ts alike.
+  //
+  // `npm run check` uses tsconfig.check.json instead, which only checks the
+  // solution.ts files -- because exercise.ts is where we deliberately write
+  // broken code on purpose.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
+    // IMPORTANT for this repo. Without this, TypeScript treats a file with no
+    // import/export as a "script" sharing one global scope with every other
+    // such file -- so `let fruits` in part-01.ts collides with `let fruits` in
+    // part-02.ts and the whole repo lights up red. "force" makes every file
+    // its own private world, which is what a code-along needs.
+    "moduleDetection": "force",
+
+    // Strict mode is ON on purpose. It is what gives us the good errors:
+    // typo'd property names, wrong types assigned, etc.
+    "strict": true,
+
+    // DELIBERATELY OFF. With this on, `scores[i]` has the type
+    // `number | undefined`, which turns the Session 2 running-total loop
+    // (`total = total + scores[i]`) into a compile error that beginners
+    // cannot fix yet. Index safety is a much later lesson. Leave this false.
+    "noUncheckedIndexedAccess": false,
+
+    // We never build anything -- tsx runs the files, tsc only checks them.
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["*.ts", "*/**.ts"]
+}

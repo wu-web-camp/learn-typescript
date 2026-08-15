@@ -1,0 +1,12 @@
+{
+  // Used by `npm run check` -- the one learners run.
+  //
+  // It checks the exercise files (and hello.ts), which is what a learner
+  // actually has. Shipped exercises are all comments, so this starts green;
+  // as they type, it becomes real feedback in the terminal.
+  //
+  // It WILL go red on the deliberate-error items (ข้อ 4, 19, 27, 35) -- that
+  // is the point of those items. Delete the offending line and it goes green.
+  "extends": "./tsconfig.json",
+  "include": ["*/exercise.ts", "hello.ts"]
+}

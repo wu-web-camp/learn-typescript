@@ -1,0 +1,7 @@
+node_modules/
+*.tsbuildinfo
+.DS_Store
+.idea/
+
+# Solutions are instructor-only -- kept on disk, never committed
+*/solution.ts

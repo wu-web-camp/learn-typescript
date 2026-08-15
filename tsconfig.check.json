@@ -1,0 +1,10 @@
+{
+  // Used by `npm run check`. Same options as the editor config, but it only
+  // looks at the solution.ts files -- the reference code, which must always be green.
+  //
+  // exercise.ts is excluded on purpose: that is where learners type deliberately
+  // broken code during the session, and a repo that is red everywhere teaches
+  // nothing. To see an error in YOUR file, look at the squiggle in the editor.
+  "extends": "./tsconfig.json",
+  "include": ["*/solution.ts", "hello.ts"]
+}
